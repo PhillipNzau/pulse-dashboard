@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EntityDataModule, EntityDataService } from '@ngrx/data';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { entityConfig } from './entity-metadata';
 
 @NgModule({
   declarations: [
@@ -10,9 +15,22 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+     //// NGRX DATA Store init
+     StoreModule.forRoot({}),
+     StoreDevtoolsModule.instrument({
+         maxAge: 25,
+     }),
+     EffectsModule.forRoot([]),
+     EntityDataModule.forRoot(entityConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+  entityDataService:EntityDataService,
+  ){
+
+  }
+}
