@@ -1,5 +1,7 @@
 <section class="w-full h-screen flex items-center justify-center px-6">
   <form
+    [formGroup]="loginForm"
+    (ngSubmit)="loginUser()"
     class="rounded-2xl border border-blue-900 md:w-[480px] md:h-[509px] bg-white mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center gap-14"
   >
     <img src="../../../assets/imgs/logo.png" alt="pulse logo" />
@@ -24,7 +26,11 @@
       >
         Login
       </button>
-      <p class="text-blue-900 text-base font-medium">Forgot your password?</p>
+      <p
+        class="text-blue-900 text-base font-medium hover:cursor-pointer border-b border-transparent w-1/2 hover:border-blue-900 transition-all duration-200"
+      >
+        Forgot your password?
+      </p>
     </div>
   </form>
 </section>
