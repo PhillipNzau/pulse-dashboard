@@ -1,1 +1,30 @@
-<p>login works!</p>
+<section class="w-full h-screen flex items-center justify-center px-6">
+  <form
+    class="rounded-2xl border border-blue-900 md:w-[480px] md:h-[509px] bg-white mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center gap-14"
+  >
+    <img src="../../../assets/imgs/logo.png" alt="pulse logo" />
+    <div class="w-full flex flex-col gap-7">
+      <input
+        type="email"
+        formControlName="email"
+        id="email"
+        placeholder="Email"
+        class="border border-200 rounded-lg w-full h-14 px-6 placeholder-neutral-300 text-blue-900 text-base font-medium outline-none focus:border-blue-900 transition-all duration-200"
+      />
+      <input
+        type="password"
+        formControlName="password"
+        id="password"
+        placeholder="Password"
+        class="border border-200 rounded-lg w-full h-14 px-6 placeholder-neutral-300 text-blue-900 text-base font-medium outline-none focus:border-blue-900 transition-all duration-200"
+      />
+
+      <button
+        class="bg-blue-900 border-none rounded-lg w-full h-14 px-6 placeholder-neutral-300 text-white text-base md:text-2xl font-bold transition-all duration-200"
+      >
+        Login
+      </button>
+      <p class="text-blue-900 text-base font-medium">Forgot your password?</p>
+    </div>
+  </form>
+</section>
