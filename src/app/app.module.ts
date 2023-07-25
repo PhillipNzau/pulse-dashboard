@@ -8,6 +8,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { entityConfig } from './entity-metadata';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { entityConfig } from './entity-metadata';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+     ReactiveFormsModule,
      //// NGRX DATA Store init
      StoreModule.forRoot({}),
      StoreDevtoolsModule.instrument({
