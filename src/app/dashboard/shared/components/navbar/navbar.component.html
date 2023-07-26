@@ -108,7 +108,7 @@
     <!-- settings nav -->
     <div
       [ngClass]="{
-    'border-l-blue-900 bg-stone-50': isRouteActive('/settings'),
+    'border-l-blue-900 bg-stone-50': isRouteActive('/settings') || isRouteActive('/settings/account-settings' || isRouteActive('/settings/access-management') || isRouteActive('/settings/password-security')),
   }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
       routerLink="/settings"
@@ -116,7 +116,7 @@
       <div
         [ngClass]="{
         'bg-neutral-700': !isRouteActive('/settings'),
-      'bg-blue-900': isRouteActive('/settings'),
+      'bg-blue-900': isRouteActive('/settings') || isRouteActive('/settings/account-settings' || isRouteActive('/settings/access-management') || isRouteActive('/settings/password-security')),
     }"
         class="w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
       >
