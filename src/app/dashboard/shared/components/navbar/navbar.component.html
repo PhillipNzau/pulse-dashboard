@@ -7,14 +7,18 @@
     />
     <!-- dashboard nav -->
     <div
+      [ngClass]="{
+      'border-l-blue-900 bg-stone-50': isRouteActive('/'),
+    }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
       routerLink=""
-      [routerLinkActive]="'border-l-blue-900 bg-stone-50'"
-      [routerLinkActiveOptions]="{ exact: true }"
     >
       <div
-        [routerLinkActive]="'bg-blue-900'"
-        class="bg-neutral-700 w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
+        [ngClass]="{
+          'bg-neutral-700': !isRouteActive('/'),
+        'bg-blue-900': isRouteActive('/'),
+      }"
+        class="w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
       >
         <svg
           width="17"
@@ -42,13 +46,18 @@
 
     <!-- meters nav -->
     <div
+      [ngClass]="{
+    'border-l-blue-900 bg-stone-50': isRouteActive('/meters'),
+  }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
-      routerLink="meters"
-      [routerLinkActive]="'border-l-blue-900 bg-stone-50'"
-      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/meters"
     >
       <div
-        class="bg-neutral-700 w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
+        [ngClass]="{
+        'bg-neutral-700': !isRouteActive('/meters'),
+      'bg-blue-900': isRouteActive('/meters'),
+    }"
+        class="w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
       >
         <svg
           width="21"
@@ -98,13 +107,18 @@
   <div>
     <!-- settings nav -->
     <div
+      [ngClass]="{
+    'border-l-blue-900 bg-stone-50': isRouteActive('/settings'),
+  }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
-      routerLink="settings"
-      [routerLinkActive]="'border-l-blue-900 bg-stone-50'"
-      [routerLinkActiveOptions]="{ exact: true }"
+      routerLink="/settings"
     >
       <div
-        class="bg-neutral-700 w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
+        [ngClass]="{
+        'bg-neutral-700': !isRouteActive('/settings'),
+      'bg-blue-900': isRouteActive('/settings'),
+    }"
+        class="w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
       >
         <svg
           width="21"
