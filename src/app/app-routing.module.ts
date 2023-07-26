@@ -4,10 +4,10 @@ import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {
-    path: 'home', loadChildren:() => import('./dashboard/dashboard.routes').then(mod => mod.DASHBOARD_ROUTES)
+    path: '', loadChildren:() => import('./dashboard/dashboard.routes').then(mod => mod.DASHBOARD_ROUTES)
   },
   {
-    path: '', component: LoginComponent
+    path: 'auth', component: LoginComponent
   }
 
 ];
