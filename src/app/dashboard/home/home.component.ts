@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemCardComponent } from "../shared/item-card/item-card.component";
+import { ItemCardComponent } from "../shared/components/item-card/item-card.component";
 
 @Component({
     selector: 'app-home',
