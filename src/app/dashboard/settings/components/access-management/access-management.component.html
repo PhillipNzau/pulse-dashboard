@@ -148,5 +148,82 @@
     </table>
 
     <!-- add user -->
+    <form class="w-3/4">
+      <div class="flex items-start gap-28 mb-14">
+        <div class="flex flex-col gap-4 w-96">
+          <label class="text-zinc-600 text-base" for="name">Full Name</label>
+          <input
+            class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
+            type="text"
+            name="name"
+            id="fName"
+          />
+        </div>
+
+        <div class="flex flex-col gap-4 w-96">
+          <label class="text-zinc-600 text-base" for="email">Email</label>
+          <input
+            class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
+            type="email"
+            name="email"
+            id="email"
+          />
+
+          <!-- info -->
+          <div class="bg-blue-900 rounded-lg px-4 py-4 bg-opacity-10">
+            <p class="text-blue-900 text-sm">
+              Important: Check that the email address you provide is valid;
+              otherwise, the user will be unable to activate the account
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-14">
+        <p
+          class="text-blue-900 font-bold text-xl border-b-2 border-b-blue-900 py-2 mb-5"
+        >
+          Access
+        </p>
+
+        <div class="relative flex items-center gap-5">
+          <input
+            class="relative peer shrink-0 appearance-none w-10 h-10 border-2 border-blue-900 rounded-lg bg-white checked:bg-blue-800 checked:border-0"
+            type="checkbox"
+            id="manUser"
+            name="manageUser"
+          />
+          <label for="manUser" class="text-blue-900 text-base">
+            Manager User (Add, Edit and Delete)</label
+          >
+          <svg
+            class="absolute w-6 h-6 mt-1 left-2 hidden pointer-events-none peer-checked:block stroke-white"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="none"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div class="flex items-center justify-between w-96">
+        <button
+          class="border border-blue-900 rounded-lg w-44 h-14 text-blue-900 font-bold hover:bg-red-900 hover:text-white hover:border-transparent transition-all duration-200"
+        >
+          Cancel
+        </button>
+        <button
+          class="bg-blue-900 rounded-lg w-44 h-14 text-white font-bold hover:bg-blue-700 transition-all duration-200"
+        >
+          Update
+        </button>
+      </div>
+    </form>
   </div>
 </section>
