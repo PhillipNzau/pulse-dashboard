@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./access-management.component.scss']
 })
 export class AccessManagementComponent {
-
+  isEditUser:boolean = false;
+  isAddUser:boolean = false;
 }
