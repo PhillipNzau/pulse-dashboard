@@ -8,7 +8,7 @@ import {
   transition,
 } from '@angular/animations';
 @Component({
-  selector: 'delete-modal',
+  selector: 'app-modal',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './modal.component.html',
@@ -17,12 +17,12 @@ import {
     trigger('fade', [
       state('void', style({ opacity: 0 })),
       state('*', style({ opacity: 1 })),
-      transition(':enter, :leave', [animate('0.3s ease-in-out')]),
+      transition(':enter, :leave', [animate('0.2s ease-in-out')]),
     ]),
     
   ],
 })
-export class DeleteModalComponent {
+export class ModalComponent {
   @Input() showModal = false;
   @Input() width:string = 'auto';
   @Input() borderColor:string = 'auto';
