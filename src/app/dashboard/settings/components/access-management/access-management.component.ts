@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DeleteModalComponent } from "../../../shared/components/modal/modal.component";
+import { ModalComponent } from "../../../shared/components/modal/modal.component";
 
 @Component({
     selector: 'app-access-management',
     standalone: true,
     templateUrl: './access-management.component.html',
     styleUrls: ['./access-management.component.scss'],
-    imports: [CommonModule, DeleteModalComponent]
+    imports: [CommonModule, ModalComponent]
 })
 export class AccessManagementComponent {
   isEditUser:boolean = false;
