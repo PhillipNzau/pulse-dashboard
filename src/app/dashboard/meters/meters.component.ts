@@ -12,10 +12,13 @@ import { ModalComponent } from "../shared/components/modal/modal.component";
 export class MetersComponent {
   filterText:string =  'all'
   showDeleteModal:boolean = false;
+  showEditModal:boolean =false;
+  showAddModal:boolean =false;
 
   closeModal(): void {
-    console.log('sdsd');
     
+    this.showAddModal = false;
+    this.showEditModal = false;
     this.showDeleteModal = false;
   }
 
