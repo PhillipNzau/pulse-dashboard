@@ -133,6 +133,7 @@
             </td>
             <td class="whitespace-nowrap text-center px-0 py-4">
               <div
+                (click)="showModal = true"
                 class="items-center flex justify-center hover:cursor-pointer"
               >
                 <svg
@@ -380,3 +381,57 @@
     </ng-container>
   </div>
 </section>
+
+<!-- Delete Modal -->
+<delete-modal
+  *ngIf="showModal"
+  (backdropClick)="closeModal()"
+  width="480"
+  borderColor="blue-900"
+>
+  <div class="flex justify-end">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="none"
+      class="w-6 h-6 stroke-blue-900 hover:cursor-pointer"
+      (click)="showModal = false"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  </div>
+  <p class="text-blue-900 font-bold text-3xl text-center mb-14">Delete User</p>
+
+  <!-- modal body -->
+  <div class="px-9">
+    <div class="mb-12">
+      <p class="text-black text-xl font-medium mb-5">
+        Confirm you want to delete
+      </p>
+      <p class="text-neutral-700 text-xl">
+        Kenneth Banks <br />
+        <span class="text-base">kennethb@pukene.au</span>
+      </p>
+    </div>
+    <div class="flex items-center justify-between">
+      <button
+        class="w-36 h-14 rounded-lg border border-rose-600 text-rose-600 bg-transparent font-bold hover:bg-slate-50 transition-all duration-200"
+        (click)="showModal = false"
+      >
+        No
+      </button>
+      <button
+        class="w-36 h-14 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold transition-all duration-200"
+        (click)="showModal = false"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</delete-modal>

@@ -11,7 +11,7 @@ import { entityConfig } from './entity-metadata';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +22,7 @@ import { LoginComponent } from './auth/login/login.component';
     AppRoutingModule,
     HttpClientModule,
      ReactiveFormsModule,
+     BrowserAnimationsModule,
      //// NGRX DATA Store init
      StoreModule.forRoot({}),
      StoreDevtoolsModule.instrument({
