@@ -9,5 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./meters.component.scss']
 })
 export class MetersComponent {
+  filterText:string =  'all'
+
+  filterTable(filter:string) {
+    this.filterText = filter
+  }
 
 }

@@ -110,7 +110,12 @@
         <div class="flex items-center gap-9 pl-11">
           <!-- All -->
           <div
-            class="group w-36 hover:text-blue-900 text-zinc-600 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] border-b-transparent hover:border-b-blue-900 transition-all duration-200"
+            class="group w-36 hover:text-blue-900 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] hover:border-b-blue-900 transition-all duration-200"
+            [ngClass]="{
+              'border-b-blue-900 text-blue-900': filterText === 'all',
+              'border-b-transparent text-zinc-600 ': filterText !== 'all'
+            }"
+            (click)="filterTable('all')"
           >
             <svg
               width="20"
@@ -118,7 +123,7 @@
               viewBox="0 0 20 14"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="fill-zinc-600 group-hover:fill-blue-900"
+              class="fill-current"
             >
               <g clip-path="url(#clip0_25_8284)">
                 <path
@@ -152,7 +157,12 @@
           </div>
           <!-- Online -->
           <div
-            class="group w-36 hover:text-blue-900 text-zinc-600 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] border-b-transparent hover:border-b-blue-900 transition-all duration-200"
+            class="group w-36 hover:text-blue-900 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] hover:border-b-blue-900 transition-all duration-200"
+            [ngClass]="{
+              'border-b-blue-900 text-blue-900': filterText === 'online',
+              'border-b-transparent text-zinc-600 ': filterText !== 'online'
+            }"
+            (click)="filterTable('online')"
           >
             <svg
               width="13"
@@ -160,7 +170,7 @@
               viewBox="0 0 13 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="fill-zinc-600 group-hover:fill-blue-900"
+              class="fill-current"
             >
               <path
                 d="M0.875003 5.62518C0.874974 4.69631 1.10497 3.7819 1.54445 2.96358C1.98394 2.14527 2.61923 1.44852 3.3936 0.935556C4.16798 0.422592 5.05733 0.109378 5.98225 0.0238804C6.90717 -0.0616168 7.83887 0.0832643 8.69415 0.445587C9.54944 0.80791 10.3017 1.3764 10.8837 2.10029C11.4658 2.82418 11.8595 3.68094 12.0297 4.59407C12.2 5.50719 12.1414 6.44827 11.8593 7.33327C11.5772 8.21826 11.0804 9.01962 10.4131 9.6658C10.2228 9.84955 10.0766 10.0408 9.98844 10.2461L9.27407 11.9046C9.23782 11.9886 9.17775 12.0602 9.10128 12.1105C9.02482 12.1608 8.93529 12.1877 8.84375 12.1877H4.15625C4.06456 12.1878 3.97483 12.1611 3.89818 12.1108C3.82152 12.0605 3.76131 11.9888 3.725 11.9046L3.01157 10.2452C2.90942 10.026 2.76511 9.82917 2.58688 9.6658C2.04465 9.1419 1.61359 8.51406 1.31947 7.81982C1.02534 7.12557 0.874173 6.37916 0.875003 5.62518ZM3.6875 13.5939C3.6875 13.4696 3.73689 13.3504 3.8248 13.2625C3.9127 13.1746 4.03193 13.1252 4.15625 13.1252H8.84375C8.96807 13.1252 9.0873 13.1746 9.17521 13.2625C9.26312 13.3504 9.3125 13.4696 9.3125 13.5939C9.3125 13.7182 9.26312 13.8375 9.17521 13.9254C9.0873 14.0133 8.96807 14.0627 8.84375 14.0627L8.63375 14.4817C8.55595 14.6374 8.43634 14.7684 8.28831 14.86C8.14028 14.9515 7.96969 15.0001 7.79563 15.0002H5.20438C5.03032 15.0001 4.85972 14.9515 4.7117 14.86C4.56367 14.7684 4.44406 14.6374 4.36625 14.4817L4.15625 14.0627C4.03193 14.0627 3.9127 14.0133 3.8248 13.9254C3.73689 13.8375 3.6875 13.7182 3.6875 13.5939Z"
@@ -172,7 +182,12 @@
           </div>
           <!-- Offline -->
           <div
-            class="group w-36 hover:text-blue-900 text-zinc-600 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] border-b-transparent hover:border-b-blue-900 transition-all duration-200"
+            class="group w-36 hover:text-blue-900 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] hover:border-b-blue-900 transition-all duration-200"
+            [ngClass]="{
+              'border-b-blue-900 text-blue-900': filterText === 'offline',
+              'border-b-transparent text-zinc-600 ': filterText !== 'offline'
+            }"
+            (click)="filterTable('offline')"
           >
             <svg
               width="15"
@@ -180,7 +195,7 @@
               viewBox="0 0 15 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="fill-zinc-600 group-hover:fill-blue-900"
+              class="fill-current"
             >
               <g clip-path="url(#clip0_25_8292)">
                 <path
@@ -202,13 +217,18 @@
           <!-- Alarms -->
           <div
             class="group w-36 text-rose-600 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] border-b-transparent hover:border-b-blue-900 transition-all duration-200"
+            [ngClass]="{
+              'border-b-blue-900 text-ose-600': filterText === 'alarm',
+              'border-b-transparent text-zinc-600 ': filterText !== 'alarm'
+            }"
+            (click)="filterTable('alarm')"
           >
             <svg
               width="15"
               height="15"
               viewBox="0 0 15 15"
               fill="none"
-              class="fill-rose-600 group-hover:fill-rose-600"
+              class="fill-current"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
