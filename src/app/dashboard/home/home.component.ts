@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ItemCardComponent } from "../shared/components/item-card/item-card.component";
 import { Chart, ChartModule } from 'angular-highcharts';
+import { DropdownComponent } from "../shared/components/dropdown/dropdown.component";
+import { DropdownOption } from '../shared/models/dropdownModel';
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, ItemCardComponent, ChartModule]
+    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent]
 })
 export class HomeComponent {
 
@@ -38,5 +40,19 @@ export class HomeComponent {
           } as any
         ]
       });
+
+      dropdownOptions: DropdownOption[] = [
+        { label: 'Today', value: 1 },
+        { label: 'This Week', value: 2 },
+        { label: 'Last Week', value: 3 },
+        { label: 'This Month', value: 3 },
+        { label: 'Last Month', value: 3 },
+        { label: 'This Year', value: 3 },
+      ];
+    
+      onOptionSelected(optionValue: any) {
+        console.log('Selected Option Value:', optionValue);
+        // Perform any other actions you want to take when an option is selected.
+      }
 
 }

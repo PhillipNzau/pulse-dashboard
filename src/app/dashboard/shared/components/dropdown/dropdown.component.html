@@ -1,0 +1,33 @@
+<button
+  class="inline-flex gap-2 items-center justify-between bg-transparent border border-blue-900 w-60 h-10 hover:bg-zinc-50 text-blue-900 text-sm font-normal leading-5 py-2 px-4 rounded"
+  (click)="toggleDropdown()"
+>
+  {{ selectedOption }}
+  <svg
+    width="22"
+    height="11"
+    viewBox="0 0 22 11"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M22 0C21.9332 0.0776836 21.8716 0.160546 21.7991 0.233051C18.2652 3.76196 14.7302 7.29035 11.1952 10.8182C11.1356 10.8778 11.072 10.9327 10.9995 11C10.9218 10.927 10.853 10.8648 10.7877 10.7996C7.27086 7.28983 3.75399 3.77957 0.238669 0.268785C0.153763 0.184369 0.0792112 0.090113 0 0C1.37714 0 2.75427 0 4.13141 0C6.41818 2.27872 8.70443 4.55744 11.016 6.86102C13.3152 4.55899 15.5917 2.27924 17.8686 0C19.2457 0 20.6229 0 22 0Z"
+      fill="#2B4196"
+    />
+  </svg>
+</button>
+<div
+  *ngIf="isOpen"
+  [@dropdownAnimation]
+  class="mt-2 bg-white border rounded shadow-lg absolute w-48"
+>
+  <ul class="">
+    <li
+      *ngFor="let option of options"
+      class="cursor-pointer px-4 py-2 text-blue-900 text-sm font-normal leading-5 hover:bg-blue-100"
+      (click)="selectOption(option)"
+    >
+      {{ option.label }}
+    </li>
+  </ul>
+</div>
