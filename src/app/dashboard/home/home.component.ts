@@ -14,16 +14,17 @@ export class HomeComponent {
 
     chart = new Chart({
         chart: {
-          type: 'bar'
+          type: 'column'
         },
         title: {
-          text: 'Linechart'
+            text: ''
         },
+        
         credits: {
           enabled: false
         },
         xAxis: {
-            categories: ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'],
+            categories: ['Jan', 'Feb', 'Mar','Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
           },
           yAxis: {
             title: {
@@ -33,7 +34,7 @@ export class HomeComponent {
         series: [
           {
             name: 'Data',
-            data: [10, 5, 15, 8, 12],
+            data: [10, 5, 15, 8, 12, 20, 10,3,8,10,50,60],
           } as any
         ]
       });
