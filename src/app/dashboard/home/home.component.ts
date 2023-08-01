@@ -4,13 +4,14 @@ import { ItemCardComponent } from "../shared/components/item-card/item-card.comp
 import { Chart, ChartModule } from 'angular-highcharts';
 import { DropdownComponent } from "../shared/components/dropdown/dropdown.component";
 import { DropdownOption } from '../shared/models/dropdownModel';
+import { DateRangePickerComponent } from "../shared/components/date-range-picker/date-range-picker.component";
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent]
+    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent, DateRangePickerComponent]
 })
 export class HomeComponent {
 

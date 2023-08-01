@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
      ReactiveFormsModule,
      BrowserAnimationsModule,
+     NgxDaterangepickerMd.forRoot(),
      //// NGRX DATA Store init
      StoreModule.forRoot({}),
      StoreDevtoolsModule.instrument({
