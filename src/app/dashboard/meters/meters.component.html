@@ -200,8 +200,8 @@
           <div
             class="group w-36 text-rose-600 font-medium text-base flex items-center gap-4 hover:cursor-pointer py-4 border-b-[4px] border-b-transparent hover:border-b-blue-900 transition-all duration-200"
             [ngClass]="{
-              'border-b-blue-900 text-ose-600': filterText === 'alarm',
-              'border-b-transparent text-zinc-600 ': filterText !== 'alarm'
+              'border-b-blue-900': filterText === 'alarm',
+              'border-b-transparent ': filterText !== 'alarm'
             }"
             (click)="filterTable('alarm')"
           >
