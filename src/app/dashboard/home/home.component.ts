@@ -4,13 +4,15 @@ import { ItemCardComponent } from "../shared/components/item-card/item-card.comp
 import { Chart, ChartModule } from 'angular-highcharts';
 import { DropdownComponent } from "../shared/components/dropdown/dropdown.component";
 import { DropdownOption } from '../shared/models/dropdownModel';
+import { DateRangePickerComponent } from "../shared/components/date-range-picker/date-range-picker.component";
+import * as dayjs from 'dayjs'
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent]
+    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent, DateRangePickerComponent]
 })
 export class HomeComponent {
 
@@ -42,17 +44,22 @@ export class HomeComponent {
       });
 
       dropdownOptions: DropdownOption[] = [
-        { label: 'Today', value: 1 },
-        { label: 'This Week', value: 2 },
-        { label: 'Last Week', value: 3 },
-        { label: 'This Month', value: 3 },
-        { label: 'Last Month', value: 3 },
-        { label: 'This Year', value: 3 },
+        { label: 'Today', value: [dayjs(), dayjs()] },
+        { label: 'Yesterday', value: [dayjs().subtract(1, 'days'), dayjs().subtract(1, 'days')] },
+        { label: 'Last 7 Days', value: [dayjs().subtract(6, 'days'), dayjs()] },
+        { label: 'Last 30 Days', value: [dayjs().subtract(29, 'days'), dayjs()] },
+        { label: 'This Month', value: [dayjs().startOf('month'), dayjs().endOf('month')] },
+        { label: 'Last Month', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
       ];
+     
     
       onOptionSelected(optionValue: any) {
         console.log('Selected Option Value:', optionValue);
         // Perform any other actions you want to take when an option is selected.
+      }
+      onDateSelect(date:any) {
+
+        console.log('Selected Date Value:', date);
       }
 
 }
