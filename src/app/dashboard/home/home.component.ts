@@ -57,5 +57,9 @@ export class HomeComponent {
         console.log('Selected Option Value:', optionValue);
         // Perform any other actions you want to take when an option is selected.
       }
+      onDateSelect(date:any) {
+
+        console.log('Selected Date Value:', date);
+      }
 
 }

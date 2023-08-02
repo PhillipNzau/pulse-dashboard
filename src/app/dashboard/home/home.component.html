@@ -45,7 +45,9 @@
       <div
         class="w-[245px] bg-white flex items-center justify-between rounded-md px-4 group hover:cursor-pointer"
       >
-        <app-date-range-picker></app-date-range-picker>
+        <app-date-range-picker
+          (dateSelected)="onDateSelect($event)"
+        ></app-date-range-picker>
         <svg
           width="22"
           height="11"

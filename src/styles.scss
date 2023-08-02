@@ -29,3 +29,34 @@
   color: #2B4196 !important;
   border-right: solid 2px #E2E8F0 !important ; 
 }
+
+.buttons_input {
+
+  // Style the first button
+  button:first-child {
+    border: solid 1px #2B4196 !important;
+  color: #2B4196 !important;
+  background: transparent !important;
+  height: 40px !important;
+  border-radius: 6px !important;
+  padding: 0 20px !important;
+  margin-right: 10px !important;
+  
+  svg {
+    display: none !important;
+  }
+  }
+
+  // Style the second button
+  button:nth-child(2) {
+    position: relative !important;
+    background-color: #2B4196 !important;
+    color: white !important;
+    padding: 0 20px !important;
+    border: none;
+    border-radius: 6px !important;
+    height: 40px !important;
+    box-shadow: none;
+  }
+
+}

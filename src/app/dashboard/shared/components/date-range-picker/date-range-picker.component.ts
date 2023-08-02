@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material'; // Updated import
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import * as dayjs from 'dayjs'
 @Component({
   selector: 'app-date-range-picker',
@@ -11,6 +11,7 @@ import * as dayjs from 'dayjs'
   styleUrls: ['./date-range-picker.component.scss']
 })
 export class DateRangePickerComponent {
+  @Output() dateSelected = new EventEmitter<any>();
 
   // @ts-ignore  
   selected: {startDate: Dayjs, endDate: Dayjs} = {startDate: dayjs(), endDate:dayjs()};
@@ -21,5 +22,8 @@ export class DateRangePickerComponent {
     'Last 30 Days': [dayjs().subtract(29, 'days'), dayjs()],
     'This Month': [dayjs().startOf('month'), dayjs().endOf('month')],
     'Last Month': [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')]
+  }
+   selectDate(optionValue: any) {    
+    this.dateSelected.emit(optionValue);
   }
 }
