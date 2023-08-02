@@ -6,13 +6,14 @@ import { DropdownComponent } from "../shared/components/dropdown/dropdown.compon
 import { DropdownOption } from '../shared/models/dropdownModel';
 import { DateRangePickerComponent } from "../shared/components/date-range-picker/date-range-picker.component";
 import * as dayjs from 'dayjs'
+import { ExportDropdownComponent } from "../shared/components/export-dropdown/export-dropdown.component";
 
 @Component({
     selector: 'app-home',
     standalone: true,
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
-    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent, DateRangePickerComponent]
+    imports: [CommonModule, ItemCardComponent, ChartModule, DropdownComponent, DateRangePickerComponent, ExportDropdownComponent]
 })
 export class HomeComponent {
 
@@ -52,10 +53,13 @@ export class HomeComponent {
         { label: 'Last Month', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
       ];
      
+      onExportOptionSelected(optionValue: any) {
+        console.log('Selected Option Value:', optionValue);
+      }
     
       onOptionSelected(optionValue: any) {
         console.log('Selected Option Value:', optionValue);
-        // Perform any other actions you want to take when an option is selected.
+        
       }
       onDateSelect(date:any) {
 

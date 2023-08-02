@@ -22,6 +22,10 @@
 .md-drppicker {
   left: 60vw !important;
   top:115px !important;
+  @media (max-width: 1440px) {
+    left: 46vw !important;
+
+  }
 }
 .ranges {
   padding: 20px 30px !important;
