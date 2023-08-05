@@ -260,7 +260,7 @@
 
     <!-- All table -->
     <ng-container>
-      <div class="h-[500px] overflow-hidden overflow-y-scroll overflow-x-auto">
+      <div class="h-suto overflow-hidden overflow-y-scroll overflow-x-auto">
         <table class="mx-14 table-auto w-[90%]">
           <thead class="py-3">
             <tr class="text-blue-900 font-semibold text-sm">
@@ -284,7 +284,7 @@
               *ngFor="
                 let _ of [
                   1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
-                ]
+                ] | slice : 0 : 9
               "
             >
               <tr class="to-neutral-700 text-xs font-medium border text-center">
@@ -515,7 +515,7 @@
 <app-modal
   *ngIf="showAddModal"
   (backdropClick)="closeModal()"
-  width="480"
+  width="580"
   borderColor="blue-900"
 >
   <div class="flex justify-end">
