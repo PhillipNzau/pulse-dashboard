@@ -64,3 +64,16 @@
   }
 
 }
+
+.highcharts-column-series {
+
+  // Your SCSS styles
+path {
+  // Set the fill color using the variable
+  fill: #2B4196 !important;
+}
+
+}
+.highcharts-yaxis, .highcharts-yaxis-labels, .highcharts-legend, .highcharts-grid-line, .highcharts-axis-line   {
+  display: none !important;
+}

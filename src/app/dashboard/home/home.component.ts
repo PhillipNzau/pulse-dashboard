@@ -45,12 +45,12 @@ export class HomeComponent {
       });
 
       dropdownOptions: DropdownOption[] = [
-        { label: 'Today', value: [dayjs(), dayjs()] },
-        { label: 'Yesterday', value: [dayjs().subtract(1, 'days'), dayjs().subtract(1, 'days')] },
-        { label: 'Last 7 Days', value: [dayjs().subtract(6, 'days'), dayjs()] },
-        { label: 'Last 30 Days', value: [dayjs().subtract(29, 'days'), dayjs()] },
-        { label: 'This Month', value: [dayjs().startOf('month'), dayjs().endOf('month')] },
-        { label: 'Last Month', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
+        { label: 'This Year', value: [dayjs(), dayjs()] },
+        { label: '2022', value: [dayjs().subtract(1, 'days'), dayjs().subtract(1, 'days')] },
+        { label: '2021', value: [dayjs().subtract(6, 'days'), dayjs()] },
+        { label: '2020', value: [dayjs().subtract(29, 'days'), dayjs()] },
+        { label: '2019', value: [dayjs().startOf('month'), dayjs().endOf('month')] },
+        { label: '2018', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
       ];
      
       onExportOptionSelected(optionValue: any) {
