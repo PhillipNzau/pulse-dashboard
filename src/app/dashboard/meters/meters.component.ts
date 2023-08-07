@@ -25,7 +25,7 @@ export class MetersComponent {
   meterSelected:boolean = false;
 
   selectMeter() {
-    this.meterSelected = true;    
+    this.meterSelected = !this.meterSelected;    
   }
 
   closeModal(): void {
