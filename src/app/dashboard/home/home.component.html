@@ -3,9 +3,11 @@
     id="header"
     class="flex flex-col md:flex-row items-center justify-between"
   >
-    <h1 class="font-bold text text-blue-900 md:text-4xl">Dashboard</h1>
+    <h1 class="font-bold text text-blue-900 text-3xl mb-10 md:mb-0 md:text-4xl">
+      Dashboard
+    </h1>
 
-    <div class="flex flex-col md:flex-row items-center gap-6">
+    <div class="flex flex-col md:flex-row items-center gap-8 md:gap-6">
       <!-- export -->
       <app-export-dropdown
         (optionSelected)="onExportOptionSelected($event)"
@@ -13,7 +15,7 @@
 
       <!-- date -->
       <div
-        class="w-[245px] bg-white flex items-center justify-between rounded-md px-4 group hover:cursor-pointer"
+        class="w-36 md:w-[245px] bg-white flex items-center justify-between rounded-md px-2 md:px-4 group hover:cursor-pointer"
       >
         <app-date-range-picker
           (dateSelected)="onDateSelect($event)"
@@ -65,7 +67,7 @@
 
   <!-- graph -->
   <div class="flex flex-col gap-8 bg-white rounded-xl px-6 py-5">
-    <div class="px-6 w-64 z-40">
+    <div class="px-6 w-64 mx-auto md:mx-0 z-40">
       <app-dropdown
         [options]="dropdownOptions"
         (optionSelected)="onOptionSelected($event)"

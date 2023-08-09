@@ -24,7 +24,13 @@
   top:115px !important;
   @media (max-width: 1440px) {
     left: 46vw !important;
-
+  }
+  @media (max-width: 768px) {
+    /* Your mobile styles go here */
+    left:0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
   }
 }
 .ranges {
