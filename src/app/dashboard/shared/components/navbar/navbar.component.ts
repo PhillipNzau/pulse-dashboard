@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 
@@ -11,9 +11,21 @@ import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 })
 export class NavbarComponent  implements OnInit{
   @Output() triggerMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
+  isSmallScreen: boolean = false;
 
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.checkScreenSize()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth <= 768; // Adjust breakpoint as needed
+  }
 
   ngOnInit(): void {
   }
@@ -23,7 +35,9 @@ export class NavbarComponent  implements OnInit{
   }
 
   trigger() {
-    this.triggerMenu.emit(false)
+    if (this.isSmallScreen) {
+      this.triggerMenu.emit(false)
+    }
   }
 
 }
