@@ -1,7 +1,7 @@
 <section class="flex flex-col gap-9">
   <!-- header -->
   <div id="header" class="flex items-center justify-between">
-    <h1 class="font-bold text text-blue-900 md:text-4xl">Settings</h1>
+    <h1 class="font-bold text text-blue-900 text-3xl md:text-4xl">Settings</h1>
 
     <div class="flex items-center gap-6">
       <div
@@ -61,8 +61,8 @@
     </div>
 
     <form class="">
-      <div class="flex items-start gap-28 mb-14">
-        <div class="flex flex-col gap-4 w-96">
+      <div class="flex items-start flex-col md:flex-row gap-14 md:gap-28 mb-14">
+        <div class="flex flex-col gap-4 w-full md:w-96">
           <label class="text-zinc-600 text-base" for="name">Full Name</label>
           <input
             class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
@@ -72,7 +72,7 @@
           />
         </div>
 
-        <div class="flex flex-col gap-4 w-96">
+        <div class="flex flex-col gap-4 w-full md:w-96">
           <label class="text-zinc-600 text-base" for="email">Email</label>
           <input
             class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
@@ -84,7 +84,9 @@
       </div>
 
       <!-- buttons -->
-      <div class="flex items-center justify-between w-96">
+      <div
+        class="flex items-center justify-between w-full gap-7 md:gap-0 md:w-96"
+      >
         <button
           class="border border-blue-900 rounded-lg w-44 h-14 text-blue-900 font-bold hover:bg-red-900 hover:text-white hover:border-transparent transition-all duration-200"
         >
