@@ -1,9 +1,53 @@
-<section class="grid grid-cols-12 h-screen">
-  <div class="bg-white col-span-2 h-full">
-    <app-navbar></app-navbar>
+<section class="grid gap-5 md:gap-0 md:grid-cols-12 h-screen">
+  <div
+    [ngClass]="{ 'h-20': isMenuOpen }"
+    class="bg-white p-4 md:col-span-2 md:h-full"
+  >
+    <div class="flex items-center justify-between md:hidden">
+      <div *ngIf="isMenuOpen; else elseBlock">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          style="fill: rgba(0, 0, 0, 1)"
+          (click)="toggleMenu()"
+        >
+          <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+        </svg>
+      </div>
+
+      <ng-template #elseBlock>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          style="fill: rgba(0, 0, 0, 1)"
+          (click)="toggleMenu()"
+        >
+          <path
+            d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+          ></path>
+        </svg>
+      </ng-template>
+
+      <img
+        class="w-16"
+        src="../../../../../assets/imgs/logo.png"
+        alt="pulse logo"
+      />
+      <div></div>
+    </div>
+    <app-navbar
+      [ngClass]="{ hidden: isMenuOpen }"
+      (triggerMenu)="toggleMenu()"
+      class="md:block"
+    ></app-navbar>
   </div>
   <div
-    class="col-span-10 px-6 md:pt-[59px] pb-4 h-screen overflow-hidden overflow-y-scroll no-scrollbar"
+    [ngClass]="{ hidden: !isMenuOpen }"
+    class="md:col-span-10 px-4 md:px-6 md:pt-[59px] pb-4 md:h-screen md:overflow-hidden overflow-y-scroll no-scrollbar"
   >
     <router-outlet></router-outlet>
   </div>

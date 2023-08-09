@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent  implements OnInit{
+  @Output() triggerMenu: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 
   constructor(private router: Router) {}
@@ -19,6 +20,10 @@ export class NavbarComponent  implements OnInit{
 
   isRouteActive(routePath: string): boolean {
    return this.router.url == routePath
+  }
+
+  trigger() {
+    this.triggerMenu.emit(false)
   }
 
 }

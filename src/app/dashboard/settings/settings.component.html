@@ -30,10 +30,10 @@
   </div>
 
   <!-- settings options -->
-  <div class="grid grid-cols-2 gap-12">
+  <div class="grid md:grid-cols-2 gap-12">
     <!-- account -->
     <div
-      class="bg-white px-8 rounded-xl flex items-center justify-between md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
+      class="bg-white px-2 md:px-8 rounded-xl flex items-center justify-between gap-2 h-28 md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
       [routerLink]="'account-settings'"
     >
       <svg
@@ -64,7 +64,9 @@
 
       <div>
         <h1 class="text-blue-900 font-bold md:text-3xl">Account Settings</h1>
-        <p class="text-zinc-600 text-base">Update name and email addresses</p>
+        <p class="text-zinc-600 text-sm md:text-base">
+          Update name and email addresses
+        </p>
       </div>
       <svg
         width="18"
@@ -72,6 +74,7 @@
         viewBox="0 0 18 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 md:w-8 md:h-8"
       >
         <path
           d="M-1.57361e-06 0C0.127117 0.109287 0.26271 0.210102 0.381354 0.328705C6.15593 6.11155 11.9297 11.8961 17.7025 17.6806C17.8 17.778 17.8898 17.8822 18 18.0008C17.8805 18.1279 17.7788 18.2406 17.672 18.3473C11.9288 24.1022 6.18475 29.8571 0.43983 35.6095C0.301695 35.7484 0.147458 35.8704 0 36C-9.85034e-08 33.7465 -1.97007e-07 31.493 -2.9551e-07 29.2395C3.72881 25.4975 7.45763 21.7564 11.2271 17.9737C7.46017 14.2114 3.72966 10.4864 -1.2781e-06 6.76048C-1.3766e-06 4.50699 -1.47511e-06 2.25349 -1.57361e-06 0Z"
@@ -82,7 +85,7 @@
 
     <!-- password & security -->
     <div
-      class="bg-white px-8 rounded-xl flex items-center justify-between md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
+      class="bg-white px-2 md:px-8 rounded-xl flex items-center justify-between gap-2 h-28 md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
       [routerLink]="'password-security'"
     >
       <svg
@@ -100,7 +103,7 @@
 
       <div>
         <h1 class="text-blue-900 font-bold md:text-3xl">Password & Security</h1>
-        <p class="text-zinc-600 text-base max-w-[290px]">
+        <p class="text-zinc-600 text-sm md:text-base max-w-[290px]">
           Change your password and make sure your account is secure
         </p>
       </div>
@@ -110,6 +113,7 @@
         viewBox="0 0 18 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 md:w-8 md:h-8"
       >
         <path
           d="M-1.57361e-06 0C0.127117 0.109287 0.26271 0.210102 0.381354 0.328705C6.15593 6.11155 11.9297 11.8961 17.7025 17.6806C17.8 17.778 17.8898 17.8822 18 18.0008C17.8805 18.1279 17.7788 18.2406 17.672 18.3473C11.9288 24.1022 6.18475 29.8571 0.43983 35.6095C0.301695 35.7484 0.147458 35.8704 0 36C-9.85034e-08 33.7465 -1.97007e-07 31.493 -2.9551e-07 29.2395C3.72881 25.4975 7.45763 21.7564 11.2271 17.9737C7.46017 14.2114 3.72966 10.4864 -1.2781e-06 6.76048C-1.3766e-06 4.50699 -1.47511e-06 2.25349 -1.57361e-06 0Z"
@@ -120,7 +124,7 @@
 
     <!-- Access management -->
     <div
-      class="bg-white px-8 rounded-xl flex items-center justify-between md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
+      class="bg-white px-2 md:px-8 rounded-xl flex items-center justify-between gap-2 h-28 md:w-[500px] md:h-36 hover:border-blue-900 hover:cursor-pointer border border-transparent transition-all duration-200"
       [routerLink]="'access-management'"
     >
       <svg
@@ -138,7 +142,7 @@
 
       <div>
         <h1 class="text-blue-900 font-bold md:text-3xl">Access Management</h1>
-        <p class="text-zinc-600 text-base">
+        <p class="text-zinc-600 text-sm md:text-base">
           Manage and customise user access right
         </p>
       </div>
@@ -148,6 +152,7 @@
         viewBox="0 0 18 36"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6 md:w-8 md:h-8"
       >
         <path
           d="M-1.57361e-06 0C0.127117 0.109287 0.26271 0.210102 0.381354 0.328705C6.15593 6.11155 11.9297 11.8961 17.7025 17.6806C17.8 17.778 17.8898 17.8822 18 18.0008C17.8805 18.1279 17.7788 18.2406 17.672 18.3473C11.9288 24.1022 6.18475 29.8571 0.43983 35.6095C0.301695 35.7484 0.147458 35.8704 0 36C-9.85034e-08 33.7465 -1.97007e-07 31.493 -2.9551e-07 29.2395C3.72881 25.4975 7.45763 21.7564 11.2271 17.9737C7.46017 14.2114 3.72966 10.4864 -1.2781e-06 6.76048C-1.3766e-06 4.50699 -1.47511e-06 2.25349 -1.57361e-06 0Z"
