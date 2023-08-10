@@ -10,5 +10,10 @@ import { NavbarComponent } from "./shared/components/navbar/navbar.component";
     imports: [CommonModule, RouterOutlet, NavbarComponent]
 })
 export class DashboardComponent {
+    isMenuOpen:boolean = true;
+
+    toggleMenu() {
+        this.isMenuOpen = !this.isMenuOpen;
+    }
 
 }

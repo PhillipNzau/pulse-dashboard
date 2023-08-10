@@ -1,7 +1,7 @@
-<div class="flex flex-col justify-between h-full py-10">
-  <div>
+<div class="flex flex-col justify-between gap-8 md:gap-0 md:h-screen py-10">
+  <div class="flex flex-col gap-8 md:block">
     <img
-      class="w-30 mx-auto mb-8"
+      class="hidden md:block w-30 mx-auto mb-8"
       src="../../../../../assets/imgs/logo.png"
       alt="pulse logo"
     />
@@ -12,6 +12,7 @@
     }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
       routerLink=""
+      (click)="trigger()"
     >
       <div
         [ngClass]="{
@@ -51,6 +52,7 @@
   }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
       routerLink="/meters"
+      (click)="trigger()"
     >
       <div
         [ngClass]="{
@@ -104,7 +106,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="flex flex-col gap-8 md:block">
     <!-- settings nav -->
     <div
       [ngClass]="{
@@ -112,6 +114,7 @@
   }"
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
       routerLink="/settings"
+      (click)="trigger()"
     >
       <div
         [ngClass]="{
@@ -140,6 +143,7 @@
     <!-- logout nav -->
     <div
       class="group flex items-center gap-4 h-20 px-4 border-l-[6px] border-l-transparent hover:border-l-blue-900 hover:bg-stone-50 hover:cursor-pointer transition-all duration-200"
+      (click)="trigger()"
     >
       <div
         class="bg-neutral-700 w-10 h-10 rounded-full flex items-center justify-center group-hover:bg-blue-900"
