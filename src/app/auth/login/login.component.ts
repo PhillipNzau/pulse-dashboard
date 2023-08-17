@@ -34,14 +34,19 @@ export class LoginComponent implements OnInit {
 
   // login function
   loginUser() {
+    const loadingToast = this.toastService.loading('Processing...');
+
     const loginData: Login = {
       ...this.loginForm.value
     }
     this.authService.add(loginData).subscribe({
       next: () => { 
-        this.toastService.success('Welcome!')
+        loadingToast.close();
+
+        this.toastService.success('Welcome!');
       },
       error:(err:any) => {
+        loadingToast.close();
         this.toastService.error(`Something went wrong!: ${err.error.message}`) 
       }
     });
