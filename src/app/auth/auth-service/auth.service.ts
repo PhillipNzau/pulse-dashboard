@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   private loggedIn = false;
   loginUrl = environment.loginUrl;
+  logoutUrl = environment.logoutUrl;
 
 
   constructor(
@@ -33,6 +34,10 @@ export class AuthService {
       })
     )
 
+  }
+
+  logoutUser(logout:string) {
+    return  localStorage.clear()
   }
 
   // Returns true when user is looged in and email is verified

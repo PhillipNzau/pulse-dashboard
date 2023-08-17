@@ -5,6 +5,7 @@ export const environment = {
 
     // Auth urls
     loginUrl: baseUrl + 'auth/login',
+    logoutUrl: baseUrl + 'auth/logout'
 
 
 };

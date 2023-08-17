@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
+import {Router, RouterModule } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth-service/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,9 @@ export class NavbarComponent  implements OnInit{
   isSmallScreen: boolean = false;
 
 
-  constructor(private router: Router) {
+  constructor(
+    private authService: AuthService,
+    private router: Router) {
     this.checkScreenSize()
   }
 
@@ -28,6 +31,11 @@ export class NavbarComponent  implements OnInit{
   }
 
   ngOnInit(): void {
+  }
+
+  logOutUser() {
+    this.authService.logoutUser('logout')
+    this.router.navigate(['/auth']).then(() => {})
   }
 
   isRouteActive(routePath: string): boolean {
