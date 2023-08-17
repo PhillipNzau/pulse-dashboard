@@ -3,24 +3,46 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Login, LoginRes } from '../models/login';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private loggedIn = false;
   loginUrl = environment.loginUrl;
 
 
   constructor(
-   private http: HttpClient
+   private http: HttpClient,
+   private route:Router
   ) { }
 
   add(loginData:Login) {
     return this.http.post<LoginRes>(this.loginUrl, loginData).pipe(
       map((res:LoginRes) => {
-        console.log('the res', res);
+        if(res.token) {
+          localStorage.setItem('pdTkn', res.token);
+          localStorage.setItem('pdRTkn', res.refreshToken);
+          localStorage.setItem('pdScp', res.scope);
+
+          this.route.navigate(['/']).then(() => {})
+        } else {
+        return
+        }
       })
     )
 
   }
+
+  // Returns true when user is looged in and email is verified
+  get isLoggedIn() {
+    this.loggedIn = !!localStorage.getItem('pdTkn');
+
+    if (!this.loggedIn) {
+     return this.route.navigate(['/auth']).then(() => {})
+    }
+    return this.loggedIn;
+  }
+
 }
