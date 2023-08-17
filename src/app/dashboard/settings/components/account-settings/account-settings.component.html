@@ -62,24 +62,36 @@
       </h1>
     </div>
 
-    <form class="">
+    <form class="" [formGroup]="userDetailForm" (ngSubmit)="updateUser()">
       <div class="flex items-start flex-col md:flex-row gap-14 md:gap-28 mb-14">
         <div class="flex flex-col gap-4 w-full md:w-96">
-          <label class="text-zinc-600 text-base" for="name">Full Name</label>
+          <label class="text-zinc-600 text-base" for="lName">First Name</label>
           <input
             class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
             type="text"
-            name="name"
+            formControlName="firstName"
             id="fName"
           />
         </div>
 
         <div class="flex flex-col gap-4 w-full md:w-96">
+          <label class="text-zinc-600 text-base" for="lName">Last Name</label>
+          <input
+            class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
+            type="text"
+            formControlName="lastName"
+            id="lName"
+          />
+        </div>
+      </div>
+
+      <div class="flex items-start flex-col md:flex-row gap-14 md:gap-28 mb-14">
+        <div class="flex flex-col gap-4 w-full md:w-96">
           <label class="text-zinc-600 text-base" for="email">Email</label>
           <input
             class="outline-none border border-blue-900 rounded-xl text-blue-900 px-3 bg-transparent h-16"
             type="email"
-            name="email"
+            formControlName="email"
             id="email"
           />
         </div>
@@ -90,6 +102,7 @@
         class="flex items-center justify-between w-full gap-7 md:gap-0 md:w-96"
       >
         <button
+          type="button"
           class="border border-blue-900 rounded-lg w-44 h-14 text-blue-900 font-bold hover:bg-red-900 hover:text-white hover:border-transparent transition-all duration-200"
         >
           Cancel
