@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { AuthService } from './auth/auth-service/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
      ReactiveFormsModule,
      BrowserAnimationsModule,
      NgxDaterangepickerMd.forRoot(),
+     HotToastModule.forRoot(),
      //// NGRX DATA Store init
      StoreModule.forRoot({}),
      StoreDevtoolsModule.instrument({
@@ -33,7 +36,7 @@ import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
      EffectsModule.forRoot([]),
      EntityDataModule.forRoot(entityConfig),
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

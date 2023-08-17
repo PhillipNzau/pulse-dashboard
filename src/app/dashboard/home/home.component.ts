@@ -52,7 +52,10 @@ export class HomeComponent {
         { label: '2019', value: [dayjs().startOf('month'), dayjs().endOf('month')] },
         { label: '2018', value: [dayjs().subtract(1, 'month').startOf('month'), dayjs().subtract(1, 'month').endOf('month')] },
       ];
-     
+      constructor(
+      
+      ) {}
+
       onExportOptionSelected(optionValue: any) {
         console.log('Selected Option Value:', optionValue);
       }
