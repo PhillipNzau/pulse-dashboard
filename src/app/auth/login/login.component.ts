@@ -10,7 +10,7 @@ import { AuthService } from '../auth-service/auth.service';
 export class LoginComponent {
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4)]]
   });
 
@@ -25,12 +25,12 @@ export class LoginComponent {
     const loginData = {
       ...this.loginForm.value
     }
-    // this.authService.add(loginData).subscribe({
-    //   next: (res:any) => { 
-    //   },
-    //   error:(err:any) => { console.log('Login Data Err', err);
-    //   }
-    // });
+    this.authService.add(loginData).subscribe({
+      next: (res:any) => { 
+      },
+      error:(err:any) => { console.log('Login Data Err', err);
+      }
+    });
   }
 
 }
