@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { Validators, FormBuilder } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth-service/auth.service';
+import { HotToastService } from '@ngneat/hot-toast';
+import { Login } from '../models/login';
 
 @Component({
   selector: 'app-login',
@@ -9,26 +11,30 @@ import { AuthService } from '../auth-service/auth.service';
 })
 export class LoginComponent {
 
-  loginForm = this.fb.group({
-    username: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(4)]]
-  });
+  loginForm:FormGroup
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastService: HotToastService
   ) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
+    });
   }
 
   // login function
   loginUser() {
-    const loginData = {
+    const loginData: Login = {
       ...this.loginForm.value
     }
     this.authService.add(loginData).subscribe({
-      next: (res:any) => { 
+      next: () => { 
+        this.toastService.success('Welcome!')
       },
-      error:(err:any) => { console.log('Login Data Err', err);
+      error:(err:any) => {
+        this.toastService.error(`Something went wrong!: ${err.error.message}`) 
       }
     });
   }

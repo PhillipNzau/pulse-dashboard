@@ -17,9 +17,9 @@
         <div
           class="text-red-600 mt-1"
           *ngIf="
-            loginForm.controls.username.hasError('required') &&
-            (loginForm.controls.username.dirty ||
-              loginForm.controls.username.touched)
+            loginForm.controls['username'].hasError('required') &&
+            (loginForm.controls['username'].dirty ||
+              loginForm.controls['username'].touched)
           "
         >
           Email is required.
@@ -27,8 +27,8 @@
         <div
           class="text-red-600 mt-1"
           *ngIf="
-            loginForm.controls.username.hasError('email') &&
-            loginForm.controls.username.touched
+            loginForm.controls['username'].hasError('email') &&
+            loginForm.controls['username'].touched
           "
         >
           Email is invalid.
@@ -46,9 +46,9 @@
         <div
           class="text-red-600 mt-1"
           *ngIf="
-            loginForm.controls.password.invalid &&
-            (loginForm.controls.password.dirty ||
-              loginForm.controls.password.touched)
+            loginForm.controls['password'].invalid &&
+            (loginForm.controls['password'].dirty ||
+              loginForm.controls['password'].touched)
           "
         >
           Password is required.
