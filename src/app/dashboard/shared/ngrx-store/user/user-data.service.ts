@@ -5,12 +5,14 @@ import { DefaultDataService, HttpUrlGenerator } from "@ngrx/data";
 import { HttpOptions } from "@ngrx/data/src/dataservices/interfaces";
 import { Observable, map } from "rxjs";
 import { environment } from "src/environments/environment.development";
+import { UserModel } from "../../models/userModel";
 
 @Injectable({
     providedIn: 'root',
 })
 export class UserDataService extends DefaultDataService<any> {
     getUser = environment.authUser;
+    updateUser = environment.updateUser;
 
     constructor(
         http:HttpClient,
@@ -25,6 +27,14 @@ export class UserDataService extends DefaultDataService<any> {
             map((user: any) => {
                 const users: any[] = [user];
                 return users
+            })
+        )
+    }
+
+    override add(updateData:UserModel, options?: HttpOptions | undefined): Observable<any> {
+        return this.http.post<any>(this.updateUser, updateData ).pipe(
+            map((user:UserModel) => {
+                return user
             })
         )
     }
