@@ -10,6 +10,7 @@ import { map } from 'rxjs';
 export class SettingsService {
 
   changePwdUrl = environment.updatePwd
+  resetPwdUrl = environment.forgotPwd
   constructor(
     private http: HttpClient
   ) { }
@@ -24,6 +25,22 @@ export class SettingsService {
         else {
           return
         }
+      })
+    )
+  }
+
+  resetPwd(data:any) {
+    return this.http.post<any>(this.resetPwdUrl, data).pipe(
+      map((res:any) => {
+        // console.log('ressss', res);
+        
+        // if (res.token){
+        //   localStorage.setItem('pdTkn', res.token);
+        //   localStorage.setItem('pdRTkn', res.refreshToken);
+        // }
+        // else {
+        //   return
+        // }
       })
     )
   }
