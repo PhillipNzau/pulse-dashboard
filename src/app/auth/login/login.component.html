@@ -1,5 +1,6 @@
 <section class="w-full h-screen flex items-center justify-center px-6">
   <form
+    *ngIf="!forgotPwd"
     [formGroup]="loginForm"
     (ngSubmit)="loginUser()"
     class="rounded-2xl border border-blue-900 md:w-[480px] md:h-[509px] bg-white mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center gap-14"
@@ -63,10 +64,82 @@
         Login
       </button>
       <p
-        class="text-blue-900 text-base font-medium hover:cursor-pointer border-b border-transparent w-1/2 hover:border-blue-900 transition-all duration-200"
+        class="text-blue-900 text-base font-medium hover:cursor-pointer border-b border-transparent md:w-1/2 hover:border-blue-900 transition-all duration-200"
+        (click)="toggleForgot()"
       >
         Forgot your password?
       </p>
+    </div>
+  </form>
+
+  <form
+    *ngIf="forgotPwd"
+    [formGroup]="resetPwdForm"
+    (ngSubmit)="resetPwd()"
+    class="rounded-2xl border border-blue-900 md:w-[480px] md:h-[509px] bg-white mx-auto px-6 md:px-10 py-12 flex flex-col items-center justify-center gap-14"
+  >
+    <img src="../../../assets/imgs/logo.png" alt="pulse logo" />
+    <div class="w-full flex flex-col gap-7">
+      <ng-container *ngIf="!passwordResetStatus">
+        <p class="text-blue-900 font-medium">
+          Forgotten your password? Enter your email address below to begin the
+          reset process.
+        </p>
+        <label>
+          <input
+            type="email"
+            formControlName="email"
+            id="email"
+            placeholder="Email"
+            class="border border-200 rounded-lg w-full h-14 px-6 placeholder-neutral-300 text-blue-900 text-base font-medium outline-none focus:border-blue-900 transition-all duration-200"
+          />
+          <div
+            class="text-red-600 mt-1"
+            *ngIf="
+              resetPwdForm.controls['email'].hasError('required') &&
+              (resetPwdForm.controls['email'].dirty ||
+                resetPwdForm.controls['email'].touched)
+            "
+          >
+            Email is required.
+          </div>
+          <div
+            class="text-red-600 mt-1"
+            *ngIf="
+              resetPwdForm.controls['email'].hasError('email') &&
+              resetPwdForm.controls['email'].touched
+            "
+          >
+            Email is invalid.
+          </div>
+        </label>
+
+        <button
+          [disabled]="resetPwdForm.invalid"
+          [ngClass]="{ 'bg-slate-400': resetPwdForm.invalid }"
+          class="bg-blue-900 border-none rounded-lg w-full h-14 px-6 placeholder-neutral-300 text-white text-base md:text-2xl font-bold transition-all duration-200"
+        >
+          Submit
+        </button>
+        <p
+          class="text-blue-900 text-base font-medium hover:cursor-pointer border-b border-transparent w-full md:w-1/2 hover:border-blue-900 transition-all duration-200"
+          (click)="toggleForgot()"
+        >
+          Login?
+        </p>
+      </ng-container>
+
+      <ng-container *ngIf="passwordResetStatus">
+        <button
+          class="text-center border border-blue-900 bg-blue-900 bg-opacity-20 rounded-lg w-full h-14 px-6 text-blue-900 font-medium"
+        >
+          Password Reset Requested
+        </button>
+        <p class="text-blue-900 font-medium">
+          If the email address you entered matched an existing account, please
+          check your email for instructions on what to do next.
+        </p>
+      </ng-container>
     </div>
   </form>
 </section>

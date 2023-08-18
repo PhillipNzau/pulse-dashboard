@@ -8,7 +8,8 @@ export const environment = {
     logoutUrl: baseUrl + 'auth/logout',
     authUser: baseUrl + 'auth/user',
     updateUser: baseUrl + 'user',
-    updatePwd: baseUrl + 'auth/changePassword'
+    updatePwd: baseUrl + 'auth/changePassword',
+    forgotPwd: baseUrl + 'noauth/resetPasswordByEmail'
 
 
 };

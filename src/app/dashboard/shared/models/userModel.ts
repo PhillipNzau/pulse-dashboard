@@ -37,5 +37,4 @@ export interface UserModel {
 export interface UpdatePwdModel {
   currentPassword: string,
   newPassword: string
-
 }
