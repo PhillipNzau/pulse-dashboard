@@ -4,17 +4,18 @@ import { UserEntityService } from 'src/app/dashboard/shared/ngrx-store/user/user
 import { UserModel } from 'src/app/dashboard/shared/models/userModel';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-account-settings',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './account-settings.component.html',
   styleUrls: ['./account-settings.component.scss']
 })
 export class AccountSettingsComponent implements OnInit {
   userDetailForm: FormGroup;
-  user: any;
+  user: UserModel | undefined;
 
   constructor(
     private userService: UserEntityService,
@@ -34,11 +35,9 @@ export class AccountSettingsComponent implements OnInit {
 
   getLoggedInUser() {
     return this.userService.entities$.subscribe({
-      next:(res)=> {
-        console.log('res', res);
+      next:(res:UserModel[])=> {
         this.user = res[0]
 
-        console.log('resssd', this.user);
         const initialData = {
           firstName: this.user?.firstName + '',
           lastName:this.user?.lastName + '',
@@ -54,13 +53,29 @@ export class AccountSettingsComponent implements OnInit {
 
   //Update user
   updateUser() {
-    // const updateData = {
-    //   fullName: this.userDetailForm.get('firstName')?.value + ' ' 
-    // }
+    const loadingToast = this.toastService.loading('Processing...');
     const updateData = {
-      ...this.userDetailForm
+      ...this.userDetailForm.value
     }
-    console.log('up user', updateData);
+    const update = {
+      ...this.user,
+      firstName: updateData.firstName,
+      lastName: updateData.lastName,
+      email: updateData.email
+    }
+    
+    
+    // console.log('up user', update);
+    this.userService.add(update).subscribe({
+      next:()=> {
+        loadingToast.close();
+        this.toastService.success('Update Success');
+      },
+      error:(err)=>{
+        loadingToast.close();
+        this.toastService.error(`Something went wrong!: ${err.error.message}`) 
+      }
+    })
     
   }
 
