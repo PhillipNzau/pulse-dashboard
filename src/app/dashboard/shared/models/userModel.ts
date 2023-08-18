@@ -33,3 +33,9 @@ export interface UserModel {
       lastName: string,
       name: string,
 }
+
+export interface UpdatePwdModel {
+  currentPassword: string,
+  newPassword: string
+
+}

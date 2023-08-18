@@ -6,5 +6,5 @@ export interface Login {
 export interface LoginRes {
     token: string,
     refreshToken: string,
-    scope: any
+    scope?: any
 }

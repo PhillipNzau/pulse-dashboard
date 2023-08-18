@@ -7,7 +7,8 @@ export const environment = {
     loginUrl: baseUrl + 'auth/login',
     logoutUrl: baseUrl + 'auth/logout',
     authUser: baseUrl + 'auth/user',
-    updateUser: baseUrl + 'user'
+    updateUser: baseUrl + 'user',
+    updatePwd: baseUrl + 'auth/changePassword'
 
 
 };
